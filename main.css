@@ -5219,6 +5219,35 @@ body {
     font-size: 13px;
   }
 }
+.zn-own-source {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--zn-gold-deep);
+  border: 1px solid var(--zn-gold);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-block-start: 4px;
+}
+.zn-follow-wrap {
+  margin-block-start: 16px;
+}
+.zn-follow-wrap a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--zn-black);
+  color: var(--zn-gold);
+  border: 1px solid var(--zn-gold);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.zn-follow-wrap a:hover {
+  color: var(--zn-cream);
+}
 .zn-section-line {
   display: flex;
   gap: 22px;
