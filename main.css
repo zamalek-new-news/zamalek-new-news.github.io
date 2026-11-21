@@ -5304,4 +5304,13 @@ body {
     align-items: end;
   }
 }
+.zn-context-note {
+  font-size: 13px !important;
+  border-inline-start: 2px solid var(--zn-gold);
+  padding-inline-start: 12px;
+}
+.zn-abdelshafy figure img {
+  max-height: 540px;
+  object-fit: contain;
+}
 /*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/
