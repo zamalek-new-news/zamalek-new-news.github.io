@@ -267,7 +267,7 @@
  window.instinctFile = Object.freeze({initialRoute: decodeURIComponent(location.hash.slice(1) || '/'), route: path => {if (typeof path === 'string' && path.startsWith('/') && !path.startsWith('//') && path.length <= 2048) send('route',path);}, asset: assetURL, request, live});
  const loadStyles = async () => {
    if (!configuration.hasStyles) return;
-   const response = await window.fetch('main.css');
+   const response = await window.fetch('main.c06e90d6a519.css');
    if (!response.ok) throw new Error('Styles unavailable');
    const css = await materializeStyle(await response.text());
    const stylesheet = document.createElement('style');
@@ -353,13 +353,13 @@
  let scriptAttempts = 0;
  const loadScript = () => {
    const script = document.createElement('script');
-   script.src = assetURL('main.js'); script.crossOrigin = 'anonymous';
+   script.src = assetURL('main.6abff444154b.js'); script.crossOrigin = 'anonymous';
    script.onload = () => { void waitForContent().then(() => { if (document.documentElement.hasAttribute('data-instinct-full-screen')) send('full-screen', null); send('ready', null); metric('ready'); watchHeight(); }).catch(() => send('load-failed', null)); };
    script.onerror = () => { script.remove(); if (++scriptAttempts < 3) setTimeout(loadScript, 1000 * scriptAttempts); else send('load-failed', null); };
    document.body.append(script);
  };
  const preload = document.createElement('link');
- preload.rel = 'preload'; preload.as = 'script'; preload.crossOrigin = 'anonymous'; preload.href = assetURL('main.js');
+ preload.rel = 'preload'; preload.as = 'script'; preload.crossOrigin = 'anonymous'; preload.href = assetURL('main.6abff444154b.js');
  document.head.append(preload);
  void loadStyles().then(loadScript).catch(() => send('load-failed', null));
  send('handshake', null);
