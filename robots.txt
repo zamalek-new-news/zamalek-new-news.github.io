@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zamalek-new-news.github.io/sitemap.xml
