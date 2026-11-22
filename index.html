@@ -353,13 +353,13 @@
  let scriptAttempts = 0;
  const loadScript = () => {
    const script = document.createElement('script');
-   script.src = assetURL('main.47177ef8339e.js'); script.crossOrigin = 'anonymous';
+   script.src = assetURL('main.4108b854590e.js'); script.crossOrigin = 'anonymous';
    script.onload = () => { void waitForContent().then(() => { if (document.documentElement.hasAttribute('data-instinct-full-screen')) send('full-screen', null); send('ready', null); metric('ready'); watchHeight(); }).catch(() => send('load-failed', null)); };
    script.onerror = () => { script.remove(); if (++scriptAttempts < 3) setTimeout(loadScript, 1000 * scriptAttempts); else send('load-failed', null); };
    document.body.append(script);
  };
  const preload = document.createElement('link');
- preload.rel = 'preload'; preload.as = 'script'; preload.crossOrigin = 'anonymous'; preload.href = assetURL('main.47177ef8339e.js');
+ preload.rel = 'preload'; preload.as = 'script'; preload.crossOrigin = 'anonymous'; preload.href = assetURL('main.4108b854590e.js');
  document.head.append(preload);
  void loadStyles().then(loadScript).catch(() => send('load-failed', null));
  send('handshake', null);
