@@ -5313,4 +5313,39 @@ body {
   max-height: 540px;
   object-fit: contain;
 }
+.zn-squad-list {
+  display: grid;
+  gap: 12px;
+}
+.zn-squad-list p {
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #e6e0d7;
+  border-radius: 12px;
+  line-height: 2.1;
+}
+.zn-photo-credit {
+  color: #8c8279;
+  font-size: 14px;
+}
+.zn-squad-photos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.zn-squad-photos img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+}
+@media (min-width: 768px) {
+  .zn-squad-photos {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .zn-squad-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 /*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/
