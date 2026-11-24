@@ -12518,7 +12518,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("strong", { children: "ZAMALEK NEW NEWS" }),
           /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { children: "\u0645\u0646 \u0627\u0644\u0645\u062F\u0631\u062C \u0627\u0644\u0623\u0628\u064A\u0636" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "zn-edition", children: "\u0646\u0633\u062E\u0629 \u0662\u0663 \u0646\u0648\u0641\u0645\u0628\u0631 \u0662\u0660\u0662\u0666" })
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "zn-edition", children: "\u0646\u0633\u062E\u0629 \u0662\u0664 \u0646\u0648\u0641\u0645\u0628\u0631 \u0662\u0660\u0662\u0666" })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(Fo, { title: "Zamalek New News", fact: "\u0623\u062E\u0628\u0627\u0631 \u0627\u0644\u0642\u0644\u0639\u0629 \u0627\u0644\u0628\u064A\u0636\u0627\u0621", intro: "\u0623\u062E\u0628\u0627\u0631 \u0627\u0644\u0632\u0645\u0627\u0644\u0643 \u0648\u0645\u0648\u0627\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u064A\u0627\u062A\u0647\u060C \u0641\u064A \u0645\u0633\u0627\u062D\u0629 \u0644\u062C\u0645\u0647\u0648\u0631 \u0627\u0644\u0641\u0627\u0631\u0633 \u0627\u0644\u0623\u0628\u064A\u0636." }),
       /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: "zn-stripe" }),
@@ -12669,7 +12669,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         ] }),
         /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: "zn-follow-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(rn, { href: "https://www.facebook.com/people/Zamalek-New-News/100075508342784/", children: "\u062A\u0627\u0628\u0639 \u0627\u0644\u0635\u0641\u062D\u0629 \u0639\u0644\u0649 \u0641\u064A\u0633\u0628\u0648\u0643 \u2197" }) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(Jo, { children: "\u0622\u062E\u0631 \u0645\u0631\u0627\u062C\u0639\u0629: \u0662\u0663 \u0646\u0648\u0641\u0645\u0628\u0631 \u0662\u0660\u0662\u0666. \u0647\u0630\u0647 \u0646\u0633\u062E\u0629 \u0645\u0624\u0631\u062E\u0629 \u0648\u0644\u064A\u0633\u062A \u062E\u062F\u0645\u0629 \u0623\u062E\u0628\u0627\u0631 \u0645\u0628\u0627\u0634\u0631\u0629\u061B \u0644\u0627 \u062A\u062A\u062D\u062F\u062B \u0627\u0644\u0623\u062E\u0628\u0627\u0631 \u0623\u0648 \u0645\u0648\u0627\u0639\u064A\u062F \u0627\u0644\u0645\u0628\u0627\u0631\u064A\u0627\u062A \u062A\u0644\u0642\u0627\u0626\u064A\u064B\u0627." })
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(Jo, { children: "\u0622\u062E\u0631 \u0645\u0631\u0627\u062C\u0639\u0629: \u0662\u0664 \u0646\u0648\u0641\u0645\u0628\u0631 \u0662\u0660\u0662\u0666. \u0647\u0630\u0647 \u0646\u0633\u062E\u0629 \u0645\u0624\u0631\u062E\u0629 \u0648\u0644\u064A\u0633\u062A \u062E\u062F\u0645\u0629 \u0623\u062E\u0628\u0627\u0631 \u0645\u0628\u0627\u0634\u0631\u0629\u061B \u0644\u0627 \u062A\u062A\u062D\u062F\u062B \u0627\u0644\u0623\u062E\u0628\u0627\u0631 \u0623\u0648 \u0645\u0648\u0627\u0639\u064A\u062F \u0627\u0644\u0645\u0628\u0627\u0631\u064A\u0627\u062A \u062A\u0644\u0642\u0627\u0626\u064A\u064B\u0627." })
     ] });
   }
 
