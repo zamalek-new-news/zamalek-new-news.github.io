@@ -1,22 +1,30 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zamalek New News | أخبار الزمالك</title><meta name="description" content="أخبار الزمالك ومواعيد مبارياته وأرشيف الأخبار بالمصادر. مساحة جماهيرية مستقلة وليست الموقع الرسمي للنادي."><link rel="canonical" href="https://zamalek-new-news.github.io/"><meta name="robots" content="index,follow"></head><body><div id="root"></div><script>const configuration={"documents":["assets/2L3TNOC4.woff2","assets/4PNG3Z7B.jpg","assets/5O4ADPGO.jpg","assets/6HBTCF3E.woff2","assets/7UAGB34N.woff2","assets/AEJGHGJA.jpg","assets/B7W4P4RW.jpg","assets/DCUCO6EG.woff2","assets/E34RMFMI.woff2","assets/EDUFJISK.woff2","assets/ESVYJHOG.woff2","assets/GWBPHQBQ.woff2","assets/HL7YFMCA.jpg","assets/KZYIEKM3.woff2","assets/MQW3H2JJ.jpg","assets/PQNVRRKH.otf","assets/RABRRXQU.jpg","assets/RK4X2PXO.woff2","assets/SNOET2RX.jpg","assets/T4LGNIRF.jpg","assets/WM77GZQE.ttf","assets/XSU32VRS.jpg","assets/ZHWCX5OP.jpg","assets/ZITNQAWX.woff2"],"hasStyles":true,"host":new URL(".",location.href).href.replace(/\/$/,""),"lease":"","origin":"https://files.instinct.com"};
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="root"></div><script>const configuration={"documents":["assets/2L3TNOC4.woff2","assets/4PNG3Z7B.jpg","assets/5O4ADPGO.jpg","assets/6HBTCF3E.woff2","assets/7UAGB34N.woff2","assets/AEJGHGJA.jpg","assets/B7W4P4RW.jpg","assets/DCUCO6EG.woff2","assets/E34RMFMI.woff2","assets/EDUFJISK.woff2","assets/ESVYJHOG.woff2","assets/GWBPHQBQ.woff2","assets/HL7YFMCA.jpg","assets/KZYIEKM3.woff2","assets/MQW3H2JJ.jpg","assets/PQNVRRKH.otf","assets/RABRRXQU.jpg","assets/RK4X2PXO.woff2","assets/SNOET2RX.jpg","assets/T4LGNIRF.jpg","assets/WM77GZQE.ttf","assets/XSU32VRS.jpg","assets/ZHWCX5OP.jpg","assets/ZITNQAWX.woff2"],"hasStyles":true,"host":new URL(".",location.href).href.replace(/\/$/,""),"lease":"","origin":"https://files.instinct.com","styleAssets":["assets/2L3TNOC4.woff2","assets/GWBPHQBQ.woff2","assets/6HBTCF3E.woff2","assets/7UAGB34N.woff2","assets/ZITNQAWX.woff2","assets/RK4X2PXO.woff2","assets/E34RMFMI.woff2","assets/DCUCO6EG.woff2","assets/WM77GZQE.ttf","assets/EDUFJISK.woff2","assets/ESVYJHOG.woff2","assets/PQNVRRKH.otf","assets/KZYIEKM3.woff2"]};
 (() => {
  let lease = configuration.lease;
  const started = performance.now();
  let leaseReceived = started;
  let renewed = [];
  const media = new WeakMap();
+ const nativeHost = window.parent === window && typeof window.ReactNativeWebView?.postMessage === 'function';
+ const postNative = nativeHost ? window.ReactNativeWebView.postMessage.bind(window.ReactNativeWebView) : null;
  const imageStyle = document.createElement('style');
  imageStyle.textContent = 'img[data-instinct-loading]{background:linear-gradient(90deg,var(--ds-hairline,#eae9ea) 25%,var(--ds-page,#fbfafa) 50%,var(--ds-hairline,#eae9ea) 75%);background-size:200% 100%;animation:instinct-image-loading 1.6s ease-in-out infinite;color:transparent}@keyframes instinct-image-loading{to{background-position:-200% 0}}@media(prefers-reduced-motion:reduce){img[data-instinct-loading]{animation:none}}';
  document.head.append(imageStyle);
- // The shared app-shell stylesheet pins html, body and #root to a fixed viewport-height scroller; a File is a page whose root must grow with its content so the shell can size the frame to it. Its width is the frame's, so anything wider is clipped rather than scrolling the File sideways into blank space.
- const frameStyle = document.createElement('style');
- frameStyle.textContent = 'html,body,#root{position:static!important;height:auto!important;overflow:visible!important;overflow-x:clip!important;overscroll-behavior:auto!important}';
- document.head.append(frameStyle);
- const modalStyle = document.createElement('style');
- modalStyle.textContent = 'html[data-instinct-modal-viewport] dialog:modal{position:fixed!important;top:var(--instinct-modal-top)!important;bottom:var(--instinct-modal-bottom)!important;max-height:var(--instinct-modal-height)!important;margin-top:auto!important;margin-bottom:auto!important}html[data-instinct-modal-ack][data-instinct-modal-pending] dialog:modal,html[data-instinct-modal-ack][data-instinct-modal-pending] dialog:modal::backdrop{opacity:0!important;pointer-events:none!important}';
- document.head.append(modalStyle);
+ // The shared app-shell stylesheet pins html, body and #root to a fixed viewport-height scroller; in the web iframe a File must grow with its content so the shell sizes the frame to it. When hosted top-level in the native WebView, the WebView itself is the scroller and native <dialog:modal> anchors directly to its viewport.
+ if (!nativeHost) {
+   const frameStyle = document.createElement('style');
+   frameStyle.textContent = 'html,body,#root{position:static!important;height:auto!important;overflow:visible!important;overflow-x:clip!important;overscroll-behavior:auto!important}';
+   document.head.append(frameStyle);
+   const modalStyle = document.createElement('style');
+   modalStyle.textContent = 'html[data-instinct-modal-viewport] dialog:modal{position:fixed!important;top:var(--instinct-modal-top)!important;bottom:var(--instinct-modal-bottom)!important;max-height:var(--instinct-modal-height)!important;margin-top:auto!important;margin-bottom:auto!important}html[data-instinct-modal-ack][data-instinct-modal-pending] dialog:modal,html[data-instinct-modal-ack][data-instinct-modal-pending] dialog:modal::backdrop{opacity:0!important;pointer-events:none!important}';
+   document.head.append(modalStyle);
+ }
  const channel = crypto.randomUUID();
- const send = (type, value, details) => parent.postMessage({...details, source:'instinct-file', channel, type, value}, configuration.origin);
+ const send = (type, value, details) => {
+   const payload = {...details, source:'instinct-file', channel, type, value};
+   if (postNative) postNative(JSON.stringify(payload));
+   else parent.postMessage(payload, configuration.origin);
+ };
  const requests = new Map();
  const request = (method, params) => new Promise(resolve => {
    if (requests.size >= 32) { resolve({status:'unavailable'}); return; }
@@ -62,6 +70,15 @@
    return fetchOriginal(new Request(assetURL(url.href), new Request(request, options)));
  };
  const styleAssets = new Map();
+ const styleAsset = href => {
+   if (!styleAssets.has(href)) {
+     styleAssets.set(href, window.fetch(href).then(response => {
+       if (!response.ok) throw new Error('Style asset unavailable');
+       return response.blob();
+     }).then(blob => URL.createObjectURL(blob)));
+   }
+   return styleAssets.get(href);
+ };
  const inlineStyles = new WeakMap();
  const materializeStyle = async css => {
    const replacements = new Map();
@@ -69,13 +86,7 @@
      const url = new URL(value, configuration.host + '/');
      if (value.startsWith('#') || url.origin !== configuration.host) return;
      const fragment = url.hash; url.hash = ''; url.searchParams.delete('lease');
-     if (!styleAssets.has(url.href)) {
-       styleAssets.set(url.href, window.fetch(url.href).then(response => {
-         if (!response.ok) throw new Error('Style asset unavailable');
-         return response.blob();
-       }).then(blob => URL.createObjectURL(blob)));
-     }
-     replacements.set(value, await styleAssets.get(url.href) + fragment);
+     replacements.set(value, await styleAsset(url.href) + fragment);
    }));
    return css.replace(/url\(["']?([^)'"\s]+)["']?\)/g, (match, value) => replacements.has(value) ? 'url("' + replacements.get(value) + '")' : match);
  };
@@ -225,7 +236,8 @@
  }, true);
  window.addEventListener('message', event => {
    const message = event.data;
-   if (event.source !== parent || event.origin !== configuration.origin || !message || message.source !== 'instinct-shell' || message.channel !== channel) return;
+   if (!nativeHost && (event.source !== parent || event.origin !== configuration.origin)) return;
+   if (!message || message.source !== 'instinct-shell' || message.channel !== channel) return;
    if (message.type === 'modal-viewport' && message.value && ['top','bottom','height'].every(key => typeof message.value[key] === 'number' && Number.isFinite(message.value[key]))) {
      modalViewport = null;
      for (const key of ['top','bottom','height']) document.documentElement.style.setProperty('--instinct-modal-' + key, message.value[key] + 'px');
@@ -256,6 +268,10 @@
    hold: read => { if (read && typeof read.then === 'function' && liveHolds.length < 8) liveHolds.push(Promise.resolve(read).catch(() => {})); },
    reveal: (request, element) => {
      if (typeof request !== 'number' || !(element instanceof Element)) return;
+     if (nativeHost) {
+       if (typeof element.scrollIntoView === 'function') element.scrollIntoView({behavior:'smooth', block:'center'});
+       return;
+     }
      const bounds = element.getBoundingClientRect();
      send('live-reveal', {request, top: Math.max(0, bounds.top + window.scrollY), bottom: Math.max(0, bounds.bottom + window.scrollY)});
    },
@@ -267,7 +283,10 @@
  window.instinctFile = Object.freeze({initialRoute: decodeURIComponent(location.hash.slice(1) || '/'), route: path => {if (typeof path === 'string' && path.startsWith('/') && !path.startsWith('//') && path.length <= 2048) send('route',path);}, asset: assetURL, request, live});
  const loadStyles = async () => {
    if (!configuration.hasStyles) return;
-   const response = await window.fetch('main.ca23a5c9efb5.css');
+   const requested = window.fetch('main.3d9455d16797.css');
+   // The gateway names the files main.css loads, so they are on their way before the stylesheet has arrived. They are asked for after the script and the stylesheet, which a browser that sends six requests at a time would otherwise hold behind them. The stylesheet waits on these same fetches, and a failed one fails it as before; the catch only keeps that failure from being reported twice.
+   for (const name of configuration.styleAssets || []) styleAsset(new URL(name, configuration.host + '/').href).catch(() => {});
+   const response = await requested;
    if (!response.ok) throw new Error('Styles unavailable');
    const css = await materializeStyle(await response.text());
    const stylesheet = document.createElement('style');
@@ -314,7 +333,7 @@
    send('modal', open);
    if (!open) reportHeight();
  };
- new MutationObserver(reportModal).observe(document.documentElement, {subtree:true,childList:true,attributes:true,attributeFilter:['open']});
+ if (!nativeHost) new MutationObserver(reportModal).observe(document.documentElement, {subtree:true,childList:true,attributes:true,attributeFilter:['open']});
  // The trusted shell sizes this frame to its content so one page scroll carries the hero, the card and the file together.
  let reportedHeight = 0, lastViewport = window.innerHeight, lastHeight = 0, mutated = false, lastSettled = 0, coincidences = 0;
  // Images, media and fonts that finished, so growth they cause can be told from growth that only follows the viewport.
@@ -353,15 +372,16 @@
  let scriptAttempts = 0;
  const loadScript = () => {
    const script = document.createElement('script');
-   script.src = assetURL('main.962abd946fca.js'); script.crossOrigin = 'anonymous';
-   script.onload = () => { void waitForContent().then(() => { if (document.documentElement.hasAttribute('data-instinct-full-screen')) send('full-screen', null); send('ready', null); metric('ready'); watchHeight(); }).catch(() => send('load-failed', null)); };
+   script.src = assetURL('main.7885ab3a0faf.js'); script.crossOrigin = 'anonymous';
+   script.onload = () => { void waitForContent().then(() => { if (document.documentElement.hasAttribute('data-instinct-full-screen')) send('full-screen', null); send('ready', null); metric('ready'); if (!nativeHost) watchHeight(); }).catch(() => send('load-failed', null)); };
    script.onerror = () => { script.remove(); if (++scriptAttempts < 3) setTimeout(loadScript, 1000 * scriptAttempts); else send('load-failed', null); };
    document.body.append(script);
  };
  const preload = document.createElement('link');
- preload.rel = 'preload'; preload.as = 'script'; preload.crossOrigin = 'anonymous'; preload.href = assetURL('main.962abd946fca.js');
+ preload.rel = 'preload'; preload.as = 'script'; preload.crossOrigin = 'anonymous'; preload.href = assetURL('main.7885ab3a0faf.js');
  document.head.append(preload);
  void loadStyles().then(loadScript).catch(() => send('load-failed', null));
  send('handshake', null);
- send('modal-viewport', null);
-})();</script></body></html>
+ if (!nativeHost) send('modal-viewport', null);
+})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"69b7d488095946368e83628f5bebf8f1","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body></html>
