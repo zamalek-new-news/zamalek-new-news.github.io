@@ -283,7 +283,7 @@
  window.instinctFile = Object.freeze({initialRoute: decodeURIComponent(location.hash.slice(1) || '/'), route: path => {if (typeof path === 'string' && path.startsWith('/') && !path.startsWith('//') && path.length <= 2048) send('route',path);}, asset: assetURL, request, live});
  const loadStyles = async () => {
    if (!configuration.hasStyles) return;
-   const requested = window.fetch('main.a9278f656a1a.css');
+   const requested = window.fetch('main.5f1d3a5a6ece.css');
    // The gateway names the files main.css loads, so they are on their way before the stylesheet has arrived. They are asked for after the script and the stylesheet, which a browser that sends six requests at a time would otherwise hold behind them. The stylesheet waits on these same fetches, and a failed one fails it as before; the catch only keeps that failure from being reported twice.
    for (const name of configuration.styleAssets || []) styleAsset(new URL(name, configuration.host + '/').href).catch(() => {});
    const response = await requested;
@@ -372,13 +372,13 @@
  let scriptAttempts = 0;
  const loadScript = () => {
    const script = document.createElement('script');
-   script.src = assetURL('main.48f144af6763.js'); script.crossOrigin = 'anonymous';
+   script.src = assetURL('main.00df16355ebb.js'); script.crossOrigin = 'anonymous';
    script.onload = () => { void waitForContent().then(() => { if (document.documentElement.hasAttribute('data-instinct-full-screen')) send('full-screen', null); send('ready', null); metric('ready'); if (!nativeHost) watchHeight(); }).catch(() => send('load-failed', null)); };
    script.onerror = () => { script.remove(); if (++scriptAttempts < 3) setTimeout(loadScript, 1000 * scriptAttempts); else send('load-failed', null); };
    document.body.append(script);
  };
  const preload = document.createElement('link');
- preload.rel = 'preload'; preload.as = 'script'; preload.crossOrigin = 'anonymous'; preload.href = assetURL('main.48f144af6763.js');
+ preload.rel = 'preload'; preload.as = 'script'; preload.crossOrigin = 'anonymous'; preload.href = assetURL('main.00df16355ebb.js');
  document.head.append(preload);
  void loadStyles().then(loadScript).catch(() => send('load-failed', null));
  send('handshake', null);
